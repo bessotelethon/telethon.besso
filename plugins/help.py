@@ -56,7 +56,7 @@ def getallUsage(id,name=None):
 
 async def run(message, matches, chat_id, step, crons=None):
     response = []
-    if matches[1:] == "help":
+    if matches == "الاوامر":
         for i in getallUsage(message.sender_id):
             response.append(message.reply(i, parse_mode=None))
         return response
@@ -69,8 +69,9 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "Help",
     "desc": "Show Help of plugins",
-    "usage": ["`[!/#]help`", "`[!/#]help <plugin_file_name>`"],
+    "usage": ["`الاوامر`", "`الاوامر <plugin_file_name>`"],
     "run": run,
     "sudo": False,
-    "patterns": ["^[!/#]help (.*)$", "^[!/#]help$",],
+    "patterns": ["^الاوامر (.*)$",
+    "^الاوامر$",],
 }
