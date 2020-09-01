@@ -129,9 +129,9 @@ def getWord(word, msg, message):
 
 async def run(msg, matches, chat_id, step, crons=None):
     response = []
-    if matches[0] == "dict":
+    if matches[0] == "ترجمه":
         if not (msg.out):
-            message = await msg.reply("please wait..")
+            message = await msg.reply("❏︙رجاء النتظار.... ")
         else:
             message = msg
         _thread.start_new_thread(getWord, (matches[1], msg, message))
@@ -142,9 +142,9 @@ async def run(msg, matches, chat_id, step, crons=None):
 plugin = {
     "name": "word dictionary",
     "desc": "Get meaning of word with is spell and pronunciation.",
-    "usage": ["[[!/#](dict)] <word> meaning of word with is spell and pronunciation.",],
+    "usage": ["❏︙ترجمه+ الاسم",],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#](dict) (.+)$"],
+    "patterns": ["^(ترجمه) (.+)$"],
 }
 
