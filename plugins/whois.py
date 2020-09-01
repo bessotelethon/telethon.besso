@@ -8,7 +8,7 @@ import re
 
 async def run(message, matches, chat_id, step, crons=None):
     user_id = message.sender_id
-    if matches[0] == "wi":
+    if matches[0] == "ايدي ":
         if re.match(r"@[a-zA-Z][\w\d]{3,30}[a-zA-Z\d]", matches[1]):
             user_id = (await utilities.client.get_entity(matches[1])).id
         else:
@@ -43,15 +43,15 @@ async def run(message, matches, chat_id, step, crons=None):
     if user_bio is not None:
         user_bio = utilities.markdown_escape(client.about)
     common_chats = client.common_chats_count
-    caption = """ID: `{}`
-First Name: [{}](tg://user?id={})
-Last Name: {}
-Bio: {}
-PhotoCounts: {}
-Restricted: {}
-Verified: {}
-Bot: {}
-Groups in Common: {}
+    caption = """❏︙ايدك: `{}`
+❏︙اسمك: [{}](tg://user?id={})
+❏︙اسم العائلة: {}
+❏︙النبذه: {}
+❏︙عدد الصور: {}
+❏︙تقيد: {}
+❏︙التحقق: {}
+❏︙بوت: {}
+❏︙المجموعات: {}
 """.format(
         user_id,
         first_name,
@@ -70,8 +70,8 @@ Groups in Common: {}
 plugin = {
     "name": "whois",
     "desc": "Show information about user.",
-    "usage": ["[!/#]wi <reply or use username or id>"],
+    "usage": ["❏︙ايدي + برد بالايدي بالمعرف"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]wi$", "^[!/#](wi) (.+)$",],
+    "patterns": ["^ايدي$", "^(ايدي) (.+)$",],
 }
