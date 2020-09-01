@@ -51,7 +51,7 @@ async def sendFileComplete(msg, m):
         if len(m) > 0:
             await msg.reply("Please, download file from [Download](" + m[0] + ")")
         else:
-            await msg.reply("error please try again later !.")
+            await msg.reply("❏︙يبدو أن هناك مشكلة، أعد المحاولة لاحقاْ.")
 
 
 def hook_factory(*factory_args, **factory_kwargs):
@@ -116,7 +116,7 @@ def hook_factory(*factory_args, **factory_kwargs):
                             loop.create_task(tmp_msg[i].delete())
 
             else:
-                loop.create_task(message.edit("Invalid YouTube url ."))
+                loop.create_task(message.edit("❏︙رابط اليوتيوب غير صالح ."))
                 return
             pass
         except Exception as e:
@@ -135,7 +135,7 @@ async def extract_info(url, msg):
             info += "Uploader : " + info_dict["uploader"] + "\n"
             info += "Channel url : " + info_dict["uploader_url"] + "\n"
     except Exception as e:
-        info = "Error Fetching Video Information ."
+        info = "❏︙خطأ في جلب معلومات الفيديو ."
     await msg.edit(info)
 
 
@@ -144,7 +144,7 @@ async def run(msg, matches, chat_id, step, crons=None):
 
     if msg.is_reply:
         if not (msg.out):
-            message = await msg.reply("Searching on YouTube.com...")
+            message = await msg.reply("❏︙جاري البحث في YouTube.com")
         else:
             message = msg
         msg = await msg.get_reply_message()
@@ -177,9 +177,9 @@ async def run(msg, matches, chat_id, step, crons=None):
 plugin = {
     "name": "Youtube Video Downloader ",
     "desc": "Best Way To Download Youtube Video .",
-    "usage": ["[!/#]video Reply To Massage That Contains Vaild Youtube Video url ."],
+    "usage": ["❏︙تحميل فيديو + برد ع رابط"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]video$"],
+    "patterns": ["^تحميل فيديو$"],
 }
 
