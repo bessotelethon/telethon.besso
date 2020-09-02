@@ -66,7 +66,7 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "weather",
     "desc": "Show The Weather of a city\n\n" "*For Example :*\n`/weather London`",
-    "usage": ["❏︙الطقس"],
+    "usage": ["الطقس"],
     "run": run,
     "sudo": False,
     "patterns": ["^الطقس$"],
