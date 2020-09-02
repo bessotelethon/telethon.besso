@@ -4,10 +4,10 @@ import random
 
 
 async def run(message, matches, chat_id, step, crons=None):
-    key = ["❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "🤎"]
+    key = ["❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "💞", "💘"]
     if not (message.out):
         message = await message.reply(str("please wait."))
-    if matches == "h":
+    if matches == "قلب":
         random.shuffle(key)
         for j in range(0, 10):
             for i in key:
@@ -31,10 +31,9 @@ plugin = {
     "name": "heart Animation",
     "desc": "Heart replacement animation",
     "usage": [
-        "[!/#]h to send one heart as animation",
-        "[!/#]h <text> to animate heart in text.",
+        "❏︙/قلب",
     ],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]h (.*)$", "^[!/#](h)$"],
+    "patterns": ["^[!/#]قلب (.*)$", "^[!/#](قلب)$"],
 }
