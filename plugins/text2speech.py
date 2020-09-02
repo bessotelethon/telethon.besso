@@ -12,7 +12,7 @@ def shellquote(s):
 
 
 async def getVoice(message, matches):
-    tmp = await message.reply("Please wait...")
+    tmp = await message.reply("❏︙الرجاء الانتظار ...")
     export_file = (
         "tmp/"
         + str(message.sender_id)
@@ -60,7 +60,7 @@ async def getVoice(message, matches):
 
 async def run(msg, matches, chat_id, step, crons=None):
 
-    if msg.is_reply and matches[0] == "tts":
+    if msg.is_reply and matches[0] == "ترجمه صوت":
         msg = await msg.get_reply_message()
         matche = []
         matche.append(matches[1])
@@ -77,8 +77,8 @@ async def run(msg, matches, chat_id, step, crons=None):
 plugin = {
     "name": "text to speech",
     "desc": "Voice from text maker.",
-    "usage": ["[!/#]tts (a|e) <text> .", "[!/#]tts (a|e) reply to message."],
+    "usage": ["ترجمه صوت (a|e) <اسم بلنكلش>."],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]tts (a|e) (.+)$", "^[!/#](tts) (a|e)$"],
+    "patterns": ["^ترجمه صوت (a|e) (.+)$", "^(ترجمه صوت) (a|e)$"],
 }
