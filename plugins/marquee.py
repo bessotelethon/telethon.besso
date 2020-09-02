@@ -28,8 +28,8 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "Marquee",
     "desc": "Edit messages repeatidly",
-    "usage": ["[!/#]r <text>"],
+    "usage": ["❏︙/اسم + الاسم"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]r (.*)$"],
+    "patterns": ["^[!/#]اسم (.*)$"],
 }
