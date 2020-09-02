@@ -48,8 +48,8 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "tag all",
     "desc": "tag all memebers in chat you in.",
-    "usage": ["`[!/#]mention`"],
+    "usage": ["`❏︙/تاك للكل `"],
     "run": run,
     "sudo": False,
-    "patterns": ["^[!/#]mention$",],
+    "patterns": ["^[!/#]تاك للكل$",],
 }
