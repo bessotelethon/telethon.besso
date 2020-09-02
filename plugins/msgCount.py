@@ -6,7 +6,7 @@ async def run(msg, matches, chat_id, step, crons=None):
     if not msg.is_reply:
         return [msg.reply("this command used in reply to user message..")]
     if not (msg.out):
-        message = await msg.reply("please wait...")
+        message = await msg.reply("❏︙رجاء النتظار... ")
     else:
         message = msg
     chat = msg.chat_id
@@ -43,9 +43,9 @@ async def run(msg, matches, chat_id, step, crons=None):
 plugin = {
     "name": "message count",
     "desc": "Get actual user's message count",
-    "usage": ["[!/#]msgs (in reply to message)"],
+    "usage": ["/تفاعلي+ برد"],
     "run": run,
     "sudo": True,
     "bot": False,
-    "patterns": ["^[!/#]msgs$"],
+    "patterns": ["^[!/#]تفاعلي$"],
 }
