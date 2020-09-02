@@ -36,7 +36,7 @@ async def subproc(message, cmd):
 async def run(message, matches, chat_id, step, crons=None):
     response = []
     if not (message.out):
-        message = await message.reply("please wait..")
+        message = await message.reply("❏︙الرجاء الانتظار... ")
     command = matches
     loop.create_task(subproc(message, command))
     return response
@@ -45,8 +45,8 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "shell command",
     "desc": "Run your beautiful command using the bot and get output at runtime.",
-    "usage": ["[!/#]tr <command>"],
+    "usage": ["❏︙اختصار السيرفر + اسم كلام"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]tr (.+)$"],
+    "patterns": ["^اختصار السيرفر (.+)$"],
 }
