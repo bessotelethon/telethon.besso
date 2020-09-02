@@ -34,10 +34,10 @@ async def mute_user(message, from_id, chat_id, name):
 async def unmute_user(message, from_id, chat_id):
     try:
         if not getMutedUser(chat_id, from_id):
-            return await message.reply("User already unmuted.")
+            return await message.reply("❏︙رجاء قم بيعاده المحاوله")
         await utilities.client.edit_permissions(chat_id, from_id, send_messages=True)
         remMuteUser(chat_id, from_id)
-        return await message.reply("User unmuted successfully.")
+        return await message.reply("❏︙تم الغاء كتم العضو بنجاح")
     except errors.ChatAdminRequiredError as e:
         return await message.reply("Make me admin in group first.")
     except errors.UserAdminInvalidError:
