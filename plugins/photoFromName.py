@@ -8,7 +8,7 @@ from lxml import html
 async def run(message, matches, chat_id, step, crons=None):
     response = []
     if not (message.out):
-        message = await message.reply("please wait ...")
+        message = await message.reply("❏︙رجاء النتظار.... ")
     text = matches[1].replace("\n", " ").replace("\r\n", " ").replace(" ", " ")
     num = matches[0]
     headers = {
@@ -43,8 +43,8 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "photo from name",
     "desc": "generate photo from name from website.",
-    "usage": ["[!/#]name <number 0-9><name> generate photo from name from website."],
+    "usage": ["❏︙/تصميم + عدد من 0اله9+ الاسم"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]name (\d) (.+)$"],
+    "patterns": ["^[!/#]تصميم (\d) (.+)$"],
 }
