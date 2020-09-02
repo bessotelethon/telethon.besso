@@ -6,7 +6,7 @@ async def run(message, matches, chat_id, step, crons=None):
     response = []
     if not (message.out):
         message = await message.reply(matches)
-    duration = "💔❤️❤️❤️💛💛💛💚💚💚"
+    duration = "❤️❤️❤️💔💔💔❣️❣️❣️💟💟💟💕💕💕💞💞💞💓💓💓💜💜💜💙💙💙💚💚💚💛💛💛🧡🧡🧡💗💗💗💖💖💖💝💝💝💘💘💘"
 
     while duration != "":
         response.append(message.edit(matches + "\n———————————————\n" + duration))
@@ -19,9 +19,9 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "Temp Messages",
     "desc": "send msgs for a period of time.",
-    "usage": ["[!/#]tm <text> to send message for a period of time."],
+    "usage": ["❏︙قلبي."],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]tm (.+)$"],
+    "patterns": ["^قلبي (.+)$"],
 }
 
