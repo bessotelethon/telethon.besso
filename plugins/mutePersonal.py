@@ -74,7 +74,7 @@ async def run(message, matches, chat_id, step, crons=None):
             return [unmute_user(message, matches[1], chat_id)]
         else:
             return [message.reply("please, use by reply or use valid username and id")]
-    elif matches == "mu":
+    elif matches == "كتم":
         if message.is_reply:
             msg = await message.get_reply_message()
             fromId = msg.from_id
@@ -82,7 +82,7 @@ async def run(message, matches, chat_id, step, crons=None):
             name = (await msg.get_sender()).first_name
             return [mute_user(message, fromId, chat_id, name)]
 
-    elif matches == "rmu":
+    elif matches == "الغاء كتم":
         if message.is_reply:
             msg = await message.get_reply_message()
             fromId = msg.from_id
@@ -105,7 +105,7 @@ plugin = {
         "^[!/#](getMuted)",
         "^[!/#](كتم)$",
         "^[!/#](الغاء كتم)$",
-        "^[!/#](mu) (.+)$",
-        "^[!/#](rmu) (.+)$",
+        "^[!/#](كتم) (.+)$",
+        "^[!/#](الغاء كتم) (.+)$",
     ],
 }
