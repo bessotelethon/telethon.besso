@@ -46,7 +46,7 @@ def hook_factory(*factory_args, **factory_kwargs):
 
 async def run(msg, matches, chat_id, step, crons=None):
     if not (msg.out):
-        message = await msg.reply("Please, wait...")
+        message = await msg.reply("❏︙الرجاء الانتظار... ")
     else:
         message = msg
     if msg.is_reply:
@@ -85,8 +85,8 @@ async def run(msg, matches, chat_id, step, crons=None):
 plugin = {
     "name": "spell check",
     "desc": "Use get more details of did you mean check",
-    "usage": ["[!/#]spell2 (reply to message)"],
+    "usage": ["تصحيح كلام + برد ع كلمه انكلش)"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#](spell2)$"],
+    "patterns": ["^(تصحيح كلام)$"],
 }
