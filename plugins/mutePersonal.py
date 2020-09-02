@@ -34,7 +34,7 @@ async def mute_user(message, from_id, chat_id, name):
 async def unmute_user(message, from_id, chat_id):
     try:
         if not getMutedUser(chat_id, from_id):
-            return await message.reply("❏︙رجاء قم بيعاده المحاوله")
+            return await message.reply("❏︙رجاء اعاده المحاوله مره اخرى")
         await utilities.client.edit_permissions(chat_id, from_id, send_messages=True)
         remMuteUser(chat_id, from_id)
         return await message.reply("❏︙تم الغاء كتم العضو بنجاح")
