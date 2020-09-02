@@ -77,7 +77,7 @@ async def run(msg, matches, chat_id, step, crons=None):
 plugin = {
     "name": "text to speech",
     "desc": "Voice from text maker.",
-    "usage": ["ترجمه صوت (a|e) <اسم بلنكلش>."],
+    "usage": ["❏︙ترجمه صوت (a|e) <اسم بلنكلش>."],
     "run": run,
     "sudo": True,
     "patterns": ["^ترجمه صوت (a|e) (.+)$", "^(ترجمه صوت) (a|e)$"],
