@@ -23,8 +23,8 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "moon animation",
     "desc": "Edit message with moon phases.",
-    "usage": ["[!/#]moon"],
+    "usage": ["/"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]moon$"],
+    "patterns": ["^[!/#]$"],
 }
