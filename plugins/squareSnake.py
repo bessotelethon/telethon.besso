@@ -67,8 +67,8 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "Square snake",
     "desc": "Snake square moving.",
-    "usage": ["[!/#]snake <number>"],
+    "usage": ["❏︙حيه + رقم"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]snake (.*)$"],
+    "patterns": ["^حيه (.*)$"],
 }
