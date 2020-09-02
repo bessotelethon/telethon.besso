@@ -49,10 +49,10 @@ def hook_factory(*factory_args, **factory_kwargs):
 
 async def run(msg, matches, chat_id, step, crons=None):
     if not (msg.out):
-        message = await msg.reply("Please, wait...")
+        message = await msg.reply("❏︙الرجاء الانتظار... ")
     else:
         message = msg
-    if msg.is_reply and matches == "spell":
+    if msg.is_reply and matches == "تصحيح":
         msg = await msg.get_reply_message()
         if msg.text:
 
@@ -68,8 +68,8 @@ async def run(msg, matches, chat_id, step, crons=None):
 plugin = {
     "name": "spell check",
     "desc": "Use google did you mean check",
-    "usage": ["[!/#]spell (reply to message)"],
+    "usage": ["❏︙تصحيح + برد ع كلام انكلش"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#](spell)$"],
+    "patterns": ["^تصحيح$"],
 }
