@@ -18,17 +18,17 @@ async def run(message, matches, chat_id, step, crons=None):
             os.remove(file)
             return []
         else:
-            return [message.reply("reply to an text message please !")]
+            return [message.reply("❏︙رجاء رد ع النص")]
     else:
-        return [message.reply("reply to an text message please !")]
+        return [message.reply("❏︙الرد على رسالة نصية من فضلك!")]
     pass
 
 
 plugin = {
     "name": "htmToimg",
     "desc": "Convert html to img",
-    "usage": ["[/!#]html reply to a message to convert it to html as image"],
+    "usage": ["+/تصميم + برد + ع الاسم"],
     "run": run,
     "sudo": False,
-    "patterns": ["^[!/#]html$"],
+    "patterns": ["^[!/#]تصميم$"],
 }
