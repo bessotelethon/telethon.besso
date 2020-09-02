@@ -26,5 +26,5 @@ plugin = {
     "usage": ["/"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]$"],
+    "patterns": ["^[!/#] (.*)$"],
 }
