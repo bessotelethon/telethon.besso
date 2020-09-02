@@ -57,7 +57,7 @@ async def run(message, matches, chat_id, step, crons=None):
             return [message.reply("file has been deleted.")]
         else:
             return [message.reply("file not found.")]
-    elif matches == "up":
+    elif matches == "رفع ملف":
         if message.is_reply:
             msg = await message.get_reply_message()
             if msg.file:
@@ -69,7 +69,7 @@ async def run(message, matches, chat_id, step, crons=None):
             return [message.reply("reply to an File please !")]
         pass
         return response
-    elif matches[0] == "del":
+    elif matches[0] == "حذف ملف":
         plugin = matches[1]
         if os.path.isfile("plugins/%s" % ((plugin + ".py"))):
 
@@ -87,14 +87,14 @@ plugin = {
     "name": "uploadMe",
     "desc": "Upload your plugins from anywhere in bot by reply to msg.",
     "usage": [
-        "[!/#]up (reply to python plugin file).",
-        "[!/#]]del <plugin name> to delete plugin that in plugins folder.",
+        "❏︙/رفع ملف + برد ع الملف.",
+        "❏︙/حذف ملف + اسم الملف.",
     ],
     "run": run,
     "sudo": True,
     "patterns": [
-        "^[!/#](up)$",
-        "^[!/#](del) (.+)$",
+        "^[!/#](رفع ملف)$",
+        "^[!/#](حذف ملف) (.+)$",
         "^[/!#](download)$",
         "^[/!#](rdownload) (.+)$",
     ],
