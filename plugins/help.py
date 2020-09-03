@@ -67,9 +67,7 @@ async def run(message, matches, chat_id, step, crons=None):
 
 
 plugin = {
-    "name": "الاوامر",
-    "desc": "Show الاوامر of plugins",
-    "usage": ["`/الاوامر`", "`/الاوامر <plugin_file_name>`"],
+    "usage": ["`/الاوامر`"],
     "run": run,
     "sudo": False,
     "patterns": ["^[!/#]الاوامر (.*)$", "^[!/#]الاوامر$",],
