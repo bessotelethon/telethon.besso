@@ -27,7 +27,6 @@ def getallUsage(id,name=None):
                 continue
             if "usage" in plugin:
                 response_text += (
-                    
                     + plugin["name"]
                     
                     + "".join(((i + "\n")) for i in plugin["usage"])
