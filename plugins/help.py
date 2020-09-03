@@ -67,7 +67,7 @@ async def run(message, matches, chat_id, step, crons=None):
 
 
 plugin = {
-    "name": "——— ——— × 𝑩𝒆𝒔𝒔𝒐  ×——— ———",
+    "name": "——————تليثيون بيسو——— ———",
     "desc": "Show Help of plugins",
     "usage": ["/الاوامر"],
     "run": run,
