@@ -40,7 +40,6 @@ def getallUsage(id,name=None):
                     + plugin["name"]
                     + "'  ء"
                     + "".join((i + "\n") for i in plugin["patterns"])
-                    + "\n"
                 )
             if len(response_text) > 3500:
                 msgs.append(response_text)
