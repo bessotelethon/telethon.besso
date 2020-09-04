@@ -27,9 +27,9 @@ def getallUsage(id,name=None):
                 continue
             if "usage" in plugin:
                 response_text += (
-                    "™"
+                    "¥"
                     + plugin["name"]
-                    + "'ء /n" 
+                    + "'ء" 
                     + "".join(((i + "\n")) for i in plugin["usage"])
                     + "\n"
                     + ("" if name == None else "Description : " + plugin["desc"])
