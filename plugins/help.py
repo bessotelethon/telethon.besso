@@ -26,9 +26,21 @@ def getallUsage(id,name=None):
             if ( not utilities.check_sudo(id) and plugin["sudo"]):
                 continue
             if "usage" in plugin:
-                response_text += ("hi")
+                response_text += (
+                "ℹ️ "
+                    + plugin["name"]
+                    + "'ء" 
+                    + "".join(((i + "\n")) for i in plugin["usage"])
+                    + "\n"
+                    + ("" if name == None else "Description : " + plugin["desc"])
+                )
             else:
-                response_text += ("هلو")
+                response_text += (
+                    "ℹ️ "
+                    + plugin["name"]
+                    + "'  ء"
+                    + "".join((i + "\n") for i in plugin["patterns"])
+                )
             if len(response_text) > 3500:
                 msgs.append(response_text)
                 response_text = ""
@@ -54,6 +66,7 @@ async def run(message, matches, chat_id, step, crons=None):
 
 
 plugin = {
+    "name": "الاوامر ",
     "desc": "مساعده في استخدام الاوامر",
     "usage": ["استخدم /الاوامر لعرض الاوامر"],
     "run": run,
