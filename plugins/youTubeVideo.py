@@ -116,7 +116,7 @@ def hook_factory(*factory_args, **factory_kwargs):
                             loop.create_task(tmp_msg[i].delete())
 
             else:
-                loop.create_task(message.edit("Invalid YouTube url ."))
+                loop.create_task(message.edit("❏︙رابط YouTube غير صالح ."))
                 return
             pass
         except Exception as e:
@@ -135,7 +135,7 @@ async def extract_info(url, msg):
             info += "Uploader : " + info_dict["uploader"] + "\n"
             info += "Channel url : " + info_dict["uploader_url"] + "\n"
     except Exception as e:
-        info = "Error Fetching Video Information ."
+        info = "❏︙خطأ في جلب معلومات الفيديو . "
     await msg.edit(info)
 
 
@@ -144,7 +144,7 @@ async def run(msg, matches, chat_id, step, crons=None):
 
     if msg.is_reply:
         if not (msg.out):
-            message = await msg.reply("Searching on YouTube.com...")
+            message = await msg.reply("❏︙جاري البحث في YouTube.com... ")
         else:
             message = msg
         msg = await msg.get_reply_message()
