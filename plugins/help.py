@@ -63,5 +63,7 @@ plugin = {
 "usage": False,
 "run": False,
 "sudo": False,
-"patterns": False,
+"patterns": ["^[!/#]الاوامر$"],
+
+
 }
