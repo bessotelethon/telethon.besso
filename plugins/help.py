@@ -3,73 +3,65 @@ from os.path import join, isfile
 import os
 import re
 from utilities import utilities
-
-
 def getallUsage(id,name=None):
-    response_text = ""
-
-    plugin_files = [name]
-    if name == None:
-        plugin_files = [
-            files
-            for files in os.listdir(join(utilities.WD, "plugins"))
-            if re.search("^(.*)\.py$", files)
-        ]
-        plugin_files.sort()
-    msgs = []
-    for plugin_file in plugin_files:
-        plugin_file = plugin_file.replace(".py", "")
-        if plugin_file == "__init__" :
-            continue
-        if plugin_file in utilities.config["plugins"]:
-            plugin = utilities.load_plugin(plugin_file)
-            if ( not utilities.check_sudo(id) and plugin["sudo"]):
-                continue
-            if "usage" in plugin:
-                response_text += (
-                "ℹ️ "
-                    + plugin["name"]
-                    + "'ء" 
-                    + "".join(((i + "\n")) for i in plugin["usage"])
-                    + "\n"
-                    + ("" if name == None else "Description : " + plugin["desc"])
-                )
-            else:
-                response_text += (
-                    "ℹ️ "
-                    + plugin["name"]
-                    + "'  ء"
-                    + "".join((i + "\n") for i in plugin["patterns"])
-                )
-            if len(response_text) > 3500:
-                msgs.append(response_text)
-                response_text = ""
-        else:
-            if name != None:
-                msgs.append("no such a plugin")
-                return msgs
-    if len(response_text) > 0:
-        msgs.append(response_text)
-    return msgs
+response_text = ""
+plugin_files = [name]
+if name == None:
+plugin_files = [
+files
+for files in os.listdir(join(utilities.WD, "plugins"))
+if re.search("^(.*)\.py$", files)
+]
+plugin_files.sort()
+msgs = []
+for plugin_file in plugin_files:
+plugin_file = plugin_file.replace(".py", "")
+if plugin_file == "__init__" :
+continue
+if plugin_file in utilities.config["plugins"]:
+plugin = utilities.load_plugin(plugin_file)
+if ( not utilities.check_sudo(id) and plugin["sudo"]):
+continue
+if "usage" in plugin:
+response_text += (""+ plugin["name"] "" + "".join(((i + "\n")) for i in plugin["usage"])+ "\n"+ ("" if name == None else "Description : " + plugin["desc"]))
+else:
+response_text += (""+ plugin["name"]+ ""+ "".join((i + "\n") for i in plugin["patterns"]))
+if len(response_text) > 3500:
+msgs.append(response_text)
+response_text = ""
+else:
+if name != None:
+msgs.append("no such a plugin")
+return msgs
+if len(response_text) > 0:
+msgs.append(response_text)
+return msgs
 
 
 async def run(message, matches, chat_id, step, crons=None):
-    response = []
-    if matches[1:] == "الاوامر":
-        for i in getallUsage(message.sender_id):
-            response.append(message.reply(i, parse_mode=None))
-        return response
-    else:
-        for i in getallUsage(message.sender_id,name=matches):
-            response.append(message.reply(i, parse_mode=None))
-        return response
-
-
+response = []
+if matches[1:] == "الاوامر":
+for i in getallUsage(message.sender_id):
+response.append(message.reply(i, parse_mode=None))
+return response
+else:
+for i in getallUsage(message.sender_id,name=matches):
+response.append(message.reply(i, parse_mode=None))
+return response
 plugin = {
-    "name": "الاوامر ",
-    "desc": "مساعده في استخدام الاوامر",
-    "usage": ["استخدم /الاوامر لعرض الاوامر"],
-    "run": run,
-    "sudo": False,
-    "patterns": ["^[!/#]الاوامر (.*)$","^[!/#]الاوامر$",],
+"name": "
+❏︙الاوامر البوت
+——————————————————
+❏︙زخرفه + الاسم بلنكلش
+——————————————————
+❏︙تحميل فيديو + برد ع رابط
+——————————————————
+❏︙تحميل بصمه + برد ع رابط
+——————————————————
+❏︙تحميل صوت + برد ع رابط ",
+"desc": False,
+"usage": False,
+"run": False,
+"sudo": False,
+"patterns": False,
 }
