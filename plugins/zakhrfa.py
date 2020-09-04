@@ -26,8 +26,8 @@ async def run(message, matches, chat_id, step, crons=None):
 
 
 plugin = {
-    "name": "english zakhrfa",
-    "desc": "امر زخرفه 👇",
+    "name": "",
+    "desc": "english zakhrfa",
     "usage": ["/زخرفه + الاسم بلنكلش"],
     "run": run,
     "sudo": True,
