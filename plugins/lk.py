@@ -8,7 +8,7 @@ from userbot.utils import admin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba, check pinned in @XtraTgBot"
 
-@command(outgoing=True, pattern="^/الاوامر$")
+@command(outgoing=True, pattern="^.الاوامر$")
 async def amireallyalive(alive):
 	
     """ For .alive command, check if the bot is running.  """
