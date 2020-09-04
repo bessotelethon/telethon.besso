@@ -36,9 +36,9 @@ def getallUsage(id,name=None):
                 )
             else:
                 response_text += (
-                    "ℹ️ "
+                    "¥ "
                     + plugin["name"]
-                    + "'s patterns :\n"
+                    + "'ء"
                     + "".join((i + "\n") for i in plugin["patterns"])
                     + "\n"
                 )
@@ -69,7 +69,7 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "——— ——— × 𝑩𝒆𝒔𝒔𝒐  ×——— ———",
     "desc": "Show Help of plugins",
-    "usage": ["/الاوامر"],
+    "usage": ["❏︙/الاوامر"],
     "run": run,
     "sudo": False,
     "patterns": ["^[!/#]الاوامر (.*)$", 
