@@ -39,7 +39,7 @@ async def run(message, matches, chat_id, step, crons=None):
                     ],
                 }
                 file = None
-                m_sg = await message.reply("please wait...")
+                m_sg = await message.reply("❏︙الرجاء الانتظار...")
                 try:
                     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                         info_dict = ydl.extract_info(msg.text, download=True)
@@ -75,10 +75,10 @@ async def run(message, matches, chat_id, step, crons=None):
 
 
 plugin = {
-    "name": "youtube",
-    "desc": "Download from youtube (reply to youtube url).",
-    "usage": ["[!/#]yt \nReply to youtube url."],
+    "name": "",
+    "desc": "",
+    "usage": ["/تحميل صوت + برد ع رابط "],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]yt$"],
+    "patterns": ["^[!/#]تحميل صوت$"],
 }
