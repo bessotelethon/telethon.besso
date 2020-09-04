@@ -27,6 +27,7 @@ def getallUsage(id,name=None):
                 continue
             if "usage" in plugin:
                 response_text += 
+                "ℹ️ "
                     + plugin["name"]
                     + "'ء" 
                     + "".join(((i + "\n")) for i in plugin["usage"])
@@ -35,7 +36,7 @@ def getallUsage(id,name=None):
                 )
             else:
                 response_text += (
-                    "¥ "
+                    "ℹ️ "
                     + plugin["name"]
                     + "'  ء"
                     + "".join((i + "\n") for i in plugin["patterns"])
