@@ -29,7 +29,7 @@ def getallUsage(id,name=None):
                     response_text += (
                     "👇"
                     + plugin["name"]
-                    + "'ء\n"
+                    + "'s :/n" 
                     + "".join(((i + "\n")) for i in plugin["usage"])
                     + "\n"
                     + ("" if name == None else "Description : " + plugin["desc"])
