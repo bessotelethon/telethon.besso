@@ -26,8 +26,10 @@ def getallUsage(id,name=None):
             if ( not utilities.check_sudo(id) and plugin["sudo"]):
                 continue
             if "usage" in plugin:
+                    response_text += (
+                    "ء "
                     + plugin["name"]
-                    
+                    + "'ء\n"
                     + "".join(((i + "\n")) for i in plugin["usage"])
                     + "\n"
                     + ("" if name == None else "Description : " + plugin["desc"])
