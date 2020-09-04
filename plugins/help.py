@@ -26,10 +26,10 @@ def getallUsage(id,name=None):
             if ( not utilities.check_sudo(id) and plugin["sudo"]):
                 continue
             if "usage" in plugin:
-                    response_text += (
-                    "👇"
+                response_text += (
+                    "ℹ️ "
                     + plugin["name"]
-                    + "'s :/n" 
+                    + "'s  :\n"
                     + "".join(((i + "\n")) for i in plugin["usage"])
                     + "\n"
                     + ("" if name == None else "Description : " + plugin["desc"])
@@ -56,7 +56,7 @@ def getallUsage(id,name=None):
 
 async def run(message, matches, chat_id, step, crons=None):
     response = []
-    if matches == "الاوامر":
+    if matches[1:] == "الاوامر":
         for i in getallUsage(message.sender_id):
             response.append(message.reply(i, parse_mode=None))
         return response
@@ -67,11 +67,10 @@ async def run(message, matches, chat_id, step, crons=None):
 
 
 plugin = {
-    "name": "ء————× 𝑩𝒆𝒔𝒔𝒐 ×————",
+    "name": "——— ——— × 𝑩𝒆𝒔𝒔𝒐  ×——— ———",
     "desc": "Show Help of plugins",
-    "usage": ["`الاوامر`", "`الاوامر <plugin_file_name>`"],
+    "usage": ["/الاوامر"],
     "run": run,
     "sudo": False,
-    "patterns": ["^الاوامر (.*)$",
-    "^الاوامر$",],
+    "patterns": ["^[!/#]الاوامر (.*)$", "^[!/#]الاوامر$",],
 }
