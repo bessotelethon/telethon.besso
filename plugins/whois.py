@@ -72,6 +72,6 @@ plugin = {
     "desc": "",
     "usage": ["/ايدي + برد + بدون رد"],
     "run": run,
-    "sudo": True,
+"sudo":False,
     "patterns": ["^[!/#]ايدي$", "^[!/#](ايدي) (.+)$",],
 }
