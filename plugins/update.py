@@ -21,23 +21,23 @@ async def run(message, matches, chat_id, step, crons=None):
     for line in runGitPull():
         upd = upd + line.decode("utf-8")
     if "Already" in upd:
-        return [message.reply("The source is up to date.")]
+        return [message.reply("❏︙تم عاده تشغيل البوت وتم تحديث السورس")]
     else:
         utilities.config = utilities.get_config()
         utilities.config["updateChat"] = message.chat_id
         utilities.save_config()
         await message.reply(
-            "The source has been updated,the bot will restart please wait."
+            "❏︙جاري تحديث السورس رجاء الانتضار منفضلك"
         )
         restartBot()
     return []
 
 
 plugin = {
-    "name": "update",
-    "desc": "Update the bot from source",
-    "usage": ["[!/#]update update bot from internal."],
+    "name": "",
+    "desc": "",
+    "usage": ["/تحديث + امر تحديث السورس "],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]update$"],
+    "patterns": ["^[!/#]تحديث$"],
 }

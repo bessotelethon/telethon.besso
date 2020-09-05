@@ -30,7 +30,7 @@ plugin = {
     "desc": "english zakhrfa",
     "usage": ["`/زخرفه` + الاسم بلنكلش"],
     "run": run,
-    "sudo": True,
+    "sudo":False,
     "patterns": ["^[!/#]زخرفه (.+)$"],
 }
 

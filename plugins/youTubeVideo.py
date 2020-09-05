@@ -179,7 +179,7 @@ plugin = {
     "desc": "Best Way To Download Youtube Video .",
     "usage": ["/تحميل فيديو + برد ع رابط"],
     "run": run,
-    "sudo": True,
+    "sudo":False,
     "patterns": ["^[!/#]تحميل فيديو$"],
 }
 

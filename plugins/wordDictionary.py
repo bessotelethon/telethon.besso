@@ -144,7 +144,7 @@ plugin = {
     "desc": "",
     "usage": ["/معنه الكلام + كتابه بلنكلش مثل book",],
     "run": run,
-    "sudo": True,
+    "sudo":False,
     "patterns": ["^[!/#](معنه الكلام) (.+)$"],
 }
 

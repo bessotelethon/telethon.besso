@@ -79,6 +79,6 @@ plugin = {
     "desc": "",
     "usage": ["/تحميل صوت + برد ع رابط "],
     "run": run,
-    "sudo": True,
+    "sudo":False,
     "patterns": ["^[!/#]تحميل صوت$"],
 }
