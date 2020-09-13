@@ -10,27 +10,27 @@ propName = "autoReply"
 async def run(message, matches, chat_id, step, crons=None):
     response = []
     if(utilities.check_sudo(message.sender_id)):
-        if matches == "ea":
+        if matches == "تفعيل الردود":
             isActive = getPropSetting(message.chat_id, propName) or None
             if isActive and isActive.active:
                 response.append(message.reply("auto reply already activated."))
             else:
                 if togglePropSettings(message.chat_id, propName):
-                    response.append(message.reply("auto reply has been activated."))
+                    response.append(message.reply("❏︙تم تفعيل الردود بنجاح"))
                 else:
                     response.append(message.reply("error while doing that."))
             return response
-        elif matches == "da":
+        elif matches == "تعطيل الردود":
             isActive = getPropSetting(message.chat_id, propName) or None
             if not isActive or isActive.active:
                 if togglePropSettings(message.chat_id, propName, False):
-                    response.append(message.reply("auto reply has been deactivated."))
+                    response.append(message.reply("❏︙تم تعطيل الردود"))
                 else:
                     response.append(message.reply("error while doing that."))
             else:
                 response.append(message.reply("auto reply already deactivated."))
             return response
-        elif matches[0] == "ar":
+        elif matches[0] == "اضف رد":
             bot = utilities.config["isbot"]
             if message.is_reply:
                 msg = await message.get_reply_message()
@@ -48,15 +48,15 @@ async def run(message, matches, chat_id, step, crons=None):
                     addAutoReply(matches[1], "media", msg.text, file)
                 else:
                     addAutoReply(matches[1], "text", msg.text)
-                response.append(message.reply("reply has been added"))
+                response.append(message.reply("❏︙تم اضافه رد بنجاح"))
             else:
                 response.append(message.reply("please reply to a message."))
             return response
-        elif matches[0] == "rar":
+        elif matches[0] == "حذف رد":
             if remAutoReplySetting(matches[1]):
-                response.append(message.reply("reply has been deleted"))
+                response.append(message.reply("❏︙تم حذف رد بنجاح"))
             else:
-                response.append(message.reply("no reply has that text"))
+                response.append(message.reply("❏︙لا يوجد هاكذا رد "))
             return response
     
     isActive = getPropSetting(message.chat_id, propName) or None
@@ -73,21 +73,21 @@ async def run(message, matches, chat_id, step, crons=None):
 
 
 plugin = {
-    "name": "autoReply",
+    "name": "",
     "desc": "Do autoReply in chats",
     "run": run,
     "usage": [
-        "/ea  to enable autoReply in a specific chat.",
-        "/da to disable autoReply in a specific chat.",
-        "/ar <text> reply to a message to save it.",
-        "/rar <query> to delete reply.",
+        "/تفعيل الردود",
+        "/تعطيل الردود",
+        "/اضف رد + برد ع رساله",
+        "/حذف رد + الاسم رد",
     ],
     "sudo": False,
     "patterns": [
-        "^[!/#](ea)$",
-        "^[!/#](da)$",
-        "^[!/#](ar) (.+)$",
-        "^[!/#](rar) (.+)$",
+        "^[!/#](تفعيل الردود)$",
+        "^[!/#](تعطيل الردود)$",
+        "^[!/#](اضف رد) (.+)$",
+        "^[!/#](حذف رد) (.+)$",
         "^(.+)$",
     ],
 }
