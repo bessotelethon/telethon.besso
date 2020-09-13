@@ -46,7 +46,7 @@ async def run(message, matches, chat_id, step, crons=None):
 
 
 plugin = {
-    "name": "tag all",
+    "name": "",
     "desc": "tag all memebers in chat you in.",
     "usage": ["/تاك للكل + عسا ما كروبك 1000k يسوي تاك"],
     "run": run,
