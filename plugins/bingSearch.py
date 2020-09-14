@@ -12,7 +12,7 @@ filters = {
     "small": "filterui:imagesize-small",
     "medium": "filterui:imagesize-medium",
     "large": "filterui:imagesize-large",
-    "xlarge": "filterui:imagesize-wallpaper",
+    "فيديو": "filterui:imagesize-wallpaper",
 }
 
 
@@ -75,8 +75,8 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "bing Search",
     "desc": "Get images from bing.com",
-    "usage": ["[!/#]bing <any or small or medium or large or xlarge> <photo name>"],
+    "usage": ["/تحميل فيديو + اسم الفيديو"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]bing (any|small|medium|large|xlarge) (.+)$"],
+    "patterns": ["^[!/#]تحميل (any|small|medium|large|فيديو) (.+)$"],
 }
