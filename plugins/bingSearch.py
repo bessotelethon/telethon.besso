@@ -73,7 +73,7 @@ async def run(message, matches, chat_id, step, crons=None):
 
 
 plugin = {
-    "name": "bing Search",
+    "name": "",
     "desc": "Get images from bing.com",
     "usage": ["/تحميل فيديو + اسم الفيديو"],
     "run": run,
