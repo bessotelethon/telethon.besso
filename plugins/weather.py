@@ -30,7 +30,7 @@ async def run(message, matches, chat_id, step, crons=None):
 
     if step == 0:
         utilities.user_steps[from_id] = {"name": "weather", "step": 1, "data": []}
-        text = "لان ارسل اسم المدينه او دوله"
+        text = "ارسل لان اسم المدينه."
         return [message.reply(text)]
     elif step == 1:
         del utilities.user_steps[from_id]
@@ -66,7 +66,7 @@ async def run(message, matches, chat_id, step, crons=None):
 plugin = {
     "name": "",
     "desc": "Show The Weather of a city\n\n" "*For Example :*\n`/weather London`",
-    "usage": ["/الطقس + اسم المدينه"],
+    "usage": ["/الطقس"],
     "run": run,
     "sudo": False,
     "patterns": ["^[!/#]الطقس$"],
