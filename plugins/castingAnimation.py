@@ -22,11 +22,11 @@ async def run(message, matches, chat_id, step, crons=None):
 
 
 plugin = {
-    "name": "message as casting",
+    "name": "",
     "desc": "send then cast content for a period of time.",
-    "usage": ["[!/#]cast <text> to send then cast content for a period of time."],
+    "usage": ["/متحركه + الاسم"],
     "run": run,
     "sudo": True,
-    "patterns": ["^[!/#]cast (.+)$"],
+    "patterns": ["^[!/#]متحركه (.+)$"],
 }
 
