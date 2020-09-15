@@ -52,7 +52,7 @@ async def run(message, matches, chat_id, step, crons=None):
                 strin = (
                     str(i)
                     + " - [%s](tg://user?id=%s)"
-                    % (("dev" + str(i)), int("%.0f" % userId))
+                    % (("رفع مطور" + str(i)), int("%.0f" % userId))
                     + "\n"
                 )
             i += 1
